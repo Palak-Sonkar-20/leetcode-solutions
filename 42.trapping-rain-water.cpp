@@ -18,7 +18,7 @@ public:
                     if(st.empty()) break;
                     int distance = i - st.top() -1;
                     int boundheight = min(height[i], height[st.top()])-height[top];
-                    ans += distance* boundedheight;
+                    ans += distance* boundheight;
                 }
             }
         return ans;
