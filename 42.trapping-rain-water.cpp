@@ -8,20 +8,20 @@
 class Solution {
 public:
     int trap(vector<int>& height) {
-        stack<int> st;
-        int volume = 0;
-        for(int i = 0; i < height.size(); i++) {
-            while(!st.empty() && height[i] > height[st.top()]){
-                int top = st.top();
-                st.pop();
-                if(st.empty()) break;
-                int distance = i - st.top()-1;
-                int bounded_height = min(height[i], height[st.top()]) - height[top];
-                volume += distance * bounded_height;
+       int n = height.size();
+       int ans = 0;
+       stack<int> st;
+       for(int i=0;i<n;i++){
+              while(!st.empty() && height[i]>height[st.top()]){
+                    int top = st.top();
+                    st.pop();
+                    if(st.empty()) break;
+                    int distance = i - st.top() -1;
+                    int boundheight = min(height[i], height[st.top()])-height[top];
+                    ans += distance* boundedheight;
+                }
             }
-            st.push(i);
-        }
-        return volume;
+        return ans;
     }
 };
 // @lc code=end
