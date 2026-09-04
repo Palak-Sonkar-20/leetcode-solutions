@@ -21,14 +21,15 @@ public:
                     minlen = right-left;
                     start = left;
                 }
-                mp[s[left]]++;
-                if(mp[s[left]]>0) count++;
-                left++;
+                mp[s[left]]++; 
+                if(mp[s[left]]>0) count++; //does 
+                left++; 
             }
         }
         if(minlen==INT_MAX) return "";
         else return s.substr(start,minlen);
     }
     };
+    
 // @lc code=end
 
